@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from 'react';
+import FormularioRegistro from './Components/FormRegister/FormRegister.js';
+import ListadeNotas from './Components/NoteList/NotesList.js';
+import "./assets/app.css";
+import './assets/index.css';
+class App extends Component{
+
+  createNote(title,text){
+    console.log('parent property');
+  }
+  render(){
+    return (
+      <div className="conteudo">
+        <FormularioRegistro createNote={this.createNote} />
+        <ListadeNotas />
+      </div>
+    );
+  }
 }
 
 export default App;
